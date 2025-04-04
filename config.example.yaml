@@ -4,4 +4,6 @@ mqtt_username: user
 mqtt_password: pass
 mqtt_topic: cell-balance-analyser/
 
+#victoriametrics_prom_import_url: http://localhost:8428/api/v1/import/prometheus
+
 logging: info
