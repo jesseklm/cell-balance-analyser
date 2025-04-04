@@ -8,7 +8,7 @@ from httpcore import ConnectError
 from config import get_first_config
 from mqtt_handler import MqttHandler
 
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 
 
 class CellBalanceAnalyser:
