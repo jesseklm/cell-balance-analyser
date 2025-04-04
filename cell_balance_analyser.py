@@ -5,7 +5,7 @@ import signal
 from config import get_first_config
 from mqtt_handler import MqttHandler
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 class CellBalanceAnalyser:

@@ -1,0 +1,7 @@
+mqtt_server: addon_core_mosquitto
+mqtt_port: 1883
+mqtt_username: user
+mqtt_password: pass
+mqtt_topic: cell-balance-analyser/
+
+logging: info

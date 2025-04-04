@@ -12,7 +12,8 @@ def get_config_local(filename: Path) -> dict:
 def get_first_config() -> dict:
     files: list[Path] = [
         Path('/config/config.yaml'),
-        Path('config.yaml')
+        Path('config.yaml'),
+        Path('config.example.yaml')
     ]
     for file in files:
         if file.exists():
