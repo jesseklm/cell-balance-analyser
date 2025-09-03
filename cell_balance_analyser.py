@@ -8,7 +8,7 @@ from httpcore import ConnectError
 from config import get_first_config
 from mqtt_handler import MqttHandler
 
-__version__ = '0.0.6'
+__version__ = '0.0.7'
 
 
 class CellBalanceAnalyser:
@@ -27,10 +27,6 @@ class CellBalanceAnalyser:
                 logging.getLogger().setLevel(logging_level)
             else:
                 logging.warning(f'unknown logging level: %s.', logging_level)
-
-    async def connect(self):
-        while not await self.mqtt_handler.connect():
-            await asyncio.sleep(1)
 
     async def handle_mqtt_message(self, topic: str, payload: str):
         if topic.startswith('esp-module/') and topic.endswith('/balance_request'):
@@ -93,7 +89,6 @@ class CellBalanceAnalyser:
 
 async def main():
     cell_balance_analyser = CellBalanceAnalyser()
-    await cell_balance_analyser.connect()
     loop = asyncio.get_running_loop()
     main_task = asyncio.current_task()
 
